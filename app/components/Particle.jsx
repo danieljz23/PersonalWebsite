@@ -2,11 +2,11 @@
 
 import { useCallback } from "react";
 import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
+import { loadSlim } from "tsparticles-slim";
 
-const Particle = () => {
+function Particle() {
   const particlesInit = useCallback(async (engine) => {
-    await loadFull(engine);
+    await loadSlim(engine);
   }, []);
 
   return (
@@ -14,58 +14,90 @@ const Particle = () => {
       id="tsparticles"
       init={particlesInit}
       options={{
-        fullScreen: {
-          enable: false
+        fullScreen: { enable: false },
+        background: {
+          color: {
+            value: "transparent",
+          },
         },
+        fpsLimit: 60,
         particles: {
           number: {
-            value: 50,
+            value: 160,
             density: {
               enable: true,
-              value_area: 800
-            }
+              value_area: 800,
+            },
           },
           color: {
-            value: "#7500fa"
+            value: "#ffffff",
           },
-          size: {
-            value: 3,
+          shape: {
+            type: "circle",
+          },
+          opacity: {
+            value: 1,
             random: true,
             anim: {
               enable: true,
-              speed: 3
-            }
+              speed: 1,
+              opacity_min: 0,
+              sync: false,
+            },
+          },
+          size: {
+            value: 1.5,
+            random: true,
+            anim: {
+              enable: true,
+              speed: 2,
+              size_min: 0.1,
+              sync: false,
+            },
           },
           line_linked: {
-            enable: true,
-            distance: 150,
-            color: "#7500fa",
-            opacity: 0.4,
-            width: 1
+            enable: false,
           },
           move: {
             enable: true,
-            speed: 2,
+            speed: 0.5,
             direction: "none",
             random: true,
             straight: false,
-            out_mode: "bounce"
-          }
+            out_mode: "out",
+            bounce: false,
+          },
         },
         interactivity: {
           detect_on: "canvas",
           events: {
             onhover: {
               enable: true,
-              mode: "repulse"
+              mode: "bubble",
             },
-            resize: true
-          }
+            onclick: {
+              enable: true,
+              mode: "push",
+            },
+            resize: true,
+          },
+          modes: {
+            bubble: {
+              distance: 150,
+              size: 3.5,
+              duration: 1,
+              opacity: 0.8,
+              speed: 3,
+            },
+            push: {
+              particles_nb: 4,
+            },
+          },
         },
-        retina_detect: true
+        retina_detect: true,
       }}
     />
   );
-};
+}
 
-export default Particle; 
+export default Particle;

@@ -3,16 +3,11 @@
 
 import { useEffect } from "react";
 import { redirect } from "next/navigation";
-import Preloader from "./components/PreLoader";
 
 export default function Home() {
   useEffect(() => {
-    const timer = setTimeout(() => {
-      redirect("/home");
-    }, 1200);
-
-    return () => clearTimeout(timer);
+    redirect("/home");
   }, []);
 
-  return <Preloader load={true} />;
+  return null;
 }

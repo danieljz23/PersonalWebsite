@@ -26,7 +26,8 @@
     "react-pdf": "^9.2.1",
     "react-tsparticles": "^2.12.2",
     "react-typewriter-effect": "^1.1.0",
-    "tsparticles": "^3.8.1"
+    "tsparticles": "^2.12.0",
+    "tsparticles-slim": "^2.12.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

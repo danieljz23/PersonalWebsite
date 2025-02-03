@@ -3,7 +3,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "../components/Projects/ProjectCard";
-import Particle from "../components/Particle";
 import pg from "../../public/assets/projects/pg.png";
 import project from "../../public/assets/projects/project.jpeg";
 import lift from "../../public/assets/projects/lift.png";
@@ -13,7 +12,6 @@ import kickstart from "../../public/assets/projects/kickstart.png";
 const Projects = () => {
   return (
     <Container fluid className="project-section">
-      <Particle />
       <Container>
         <h1 className="project-heading">
           Recent Top <strong className="yellow">Works </strong>

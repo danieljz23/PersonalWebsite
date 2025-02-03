@@ -9,7 +9,6 @@ import Social from '../components/Contact/Social';
 const Contact = () => {
   return (
     <Container style={{padding: '60px'}}>
-      <Particle />
       <ContactForm />
       <Social />
     </Container>

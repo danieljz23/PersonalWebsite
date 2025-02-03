@@ -12,7 +12,6 @@ import Github from "../components/Skillset/Github";
 const Skillset = () => {
   return (
     <Container fluid className="about-section">
-      <Particle />
       <Container>
         <h1 className="project-heading">
           Professional <strong className="yellow">Skillset </strong>

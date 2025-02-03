@@ -1,7 +1,8 @@
 html {
   --section-background-color: linear-gradient(
     to bottom left,
-    rgb(5, 8, 40), rgb(1, 4, 39)
+    rgba(0, 0, 15, 0.9),
+    rgba(0, 0, 20, 0.9)
   );
 
   --image-gradient: linear-gradient(
@@ -35,10 +36,6 @@ button:focus {
   width: 100%;
   height: 100%;
   z-index: 999999;
-  background-color: #0c0513;
-  background-image: url(../../public/assets/pre.svg);
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 #preloader-none {
@@ -48,6 +45,8 @@ button:focus {
 #no-scroll {
   overflow: hidden;
   height: 100vh;
+  position: relative;
+  z-index: 1;
 }
 
 /* --------- */
@@ -246,11 +245,12 @@ button:focus {
   }
 }
 #tsparticles {
-  position: fixed !important;
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
+  position: absolute !important;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  z-index: 0;
 }
 
 .home-header {
@@ -259,17 +259,14 @@ button:focus {
 
 .home-section {
   position: relative;
-  z-index: -1;
-  background-image: var(--image-gradient), url(../../public/assets/home-bg.jpg);
-  background-position: top center;
-  background-repeat: no-repeat;
+  z-index: 1;
   padding-bottom: 30px !important;
   padding-top: 30px !important;
+  color: white !important;
 }
 
 .home-content {
   padding: 9rem 0 2rem !important;
-  color: whitesmoke;
   text-align: left;
 }
 
@@ -462,7 +459,7 @@ button:focus {
   position: relative !important;
   padding-top: 150px !important;
   padding-bottom: 30px !important;
-  background-image: var(--section-background-color) !important;
+  background-color: transparent !important;
   color: white !important;
 }
 
@@ -523,7 +520,7 @@ button:focus {
 position: relative !important;
 padding-top: 150px !important;
 padding-bottom: 30px !important;
-background-image: var(--section-background-color) !important;
+background-color: transparent !important;
 }
 
 .project-card {
@@ -629,7 +626,7 @@ padding-top: 10px !important;
   position: relative !important;
   padding-top: 110px !important;
   padding-bottom: 30px !important;
-  background-image: var(--section-background-color) !important;
+  background-color: transparent !important;
   color: white !important;
 }
 
@@ -763,4 +760,67 @@ padding-top: 10px !important;
 }
 .fork-btn-inner::after {
   display: none !important;
+}
+
+/* Update container styles to work with particles */
+.home-section,
+.project-section,
+.contact-section,
+.resume-section,
+.about-section {
+  position: relative;
+  z-index: 1;
+  padding-top: 150px !important;
+  padding-bottom: 30px !important;
+  color: white !important;
+}
+
+/* Ensure content appears above particles */
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+.background-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+#scroll {
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+}
+
+.resume-section {
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  background-color: transparent;
+}
+
+.resume {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  justify-content: center;
+}
+
+.react-pdf__Document {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.react-pdf__Page {
+  margin-bottom: 2rem;
+}
+
+.react-pdf__Page__canvas {
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto !important;
 }

@@ -1,18 +1,31 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import { AiOutlineDownload } from "react-icons/ai";
-import Particle from '../components/Particle';
+import Image from "next/image";
 
-const resumeLink = "/assets/sajib.pdf";
+// import pdf from "../../public/assets/DanielResume.pdf"
+
+import { Document, Page, pdfjs } from "react-pdf";
+import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+import "react-pdf/dist/esm/Page/TextLayer.css";
+pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf_viewer.min.js`;
+
+const resumeLink = "/assets/DanielResume.pdf"; 
+const resumeImage = "/assets/DanielResume.jpg";
 
 const Resume = () => {
+  const [width, setWidth] = useState(1200);
+
+  useEffect(() => {
+    setWidth(window.innerWidth);
+  }, []);
+
   return (
     <div>
       <Container fluid className="resume-section">
-        <Particle />
         <Row style={{ justifyContent: "center", position: "relative" }}>
           <Button
             variant="primary"
@@ -26,19 +39,22 @@ const Resume = () => {
         </Row>
 
         <Row className="resume">
-          <iframe
-            src={`${resumeLink}#view=FitH`}
-            width="100%"
-            height="800px"
-            style={{ 
-              margin: "2rem 0",
-              border: "none"
-            }}
-          >
-            <p>
-              Unable to display PDF file. <a href={resumeLink}>Download</a> instead.
-            </p>
-          </iframe>
+          <div style={{ 
+            position: 'relative',
+            width: width > 786 ? '80%' : '100%',
+            margin: 'auto',
+            aspectRatio: '8.5 / 11'  // Standard US letter size ratio
+          }}>
+            <Image
+              src={resumeImage}
+              alt="Resume"
+              fill
+              priority
+              style={{ 
+                objectFit: 'contain'
+              }}
+            />
+          </div>
         </Row>
 
         <Row style={{ justifyContent: "center", position: "relative" }}>
@@ -54,7 +70,7 @@ const Resume = () => {
         </Row>
       </Container>
     </div>
-  );
+  )
 }
 
-export default Resume;
+export default Resume
