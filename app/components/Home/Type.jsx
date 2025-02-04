@@ -17,10 +17,10 @@ const Type = () => {
       startDelay={1000}
       cursorColor="inherit"
       multiText={[
-        "MERN Stack Developer",
-        "Passionate Blockchain Enthusiast",
-        "Committed Open Source Contributor",
-        "Effective Problem Solver",
+        "C++ Developer",
+        "Electrical Systems Integration",
+        "React Web Developer",
+        "Perseverant Problem Solver",
       ]}
       multiTextDelay={1000}
       typeSpeed={50}

@@ -14,18 +14,18 @@ const Skillset = () => {
     <Container fluid className="about-section">
       <Container>
         <h1 className="project-heading">
-          Professional <strong className="yellow">Skillset </strong>
+          <strong className="yellow">Skillset </strong>
         </h1>
 
         <Techstack />
 
         <h1 className="project-heading">
-          <strong className="yellow">Tools</strong> I use
+          <strong className="yellow">Tools</strong>
         </h1>
         <Toolstack />
 
-        <Leetcode />
-        <Github />
+        {/* <Leetcode />
+        <Github /> */}
       </Container>
     </Container>
   )

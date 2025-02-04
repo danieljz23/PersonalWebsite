@@ -1,33 +1,42 @@
+"use client";
+
 import React from "react";
-import { Col, Row } from "react-bootstrap";
+import { Col, Row, Tooltip, OverlayTrigger } from "react-bootstrap";
 import {
-  SiVivaldi,
-  SiPostman,
-  SiHeroku,
-  SiVercel,
-  SiNetlify
+  SiReact,
+  SiNextdotjs,
+  SiMongodb,
+  SiTailwindcss,
+  SiArduino,
+  SiAutodesk
 } from "react-icons/si";
+import { GiSolderingIron } from "react-icons/gi"; // Best match for soldering
+
+const tools = [
+  { icon: <SiReact />, name: "React" },
+  { icon: <SiNextdotjs />, name: "Next.js" },
+  { icon: <SiMongodb />, name: "MongoDB" },
+  { icon: <SiTailwindcss />, name: "Tailwind CSS" },
+  { icon: <SiArduino />, name: "Arduino IDE" },
+  { icon: <SiAutodesk />, name: "Autodesk Fusion 360" },
+  { icon: <GiSolderingIron />, name: "Soldering" }
+];
 
 const Toolstack = () => {
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiVivaldi />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiPostman />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiVercel />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiNetlify />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiHeroku />
-      </Col>
+      {tools.map((tool, index) => (
+        <Col key={index} xs={4} md={2} className="tech-icons">
+          <OverlayTrigger
+            placement="top"
+            overlay={<Tooltip>{tool.name}</Tooltip>}
+          >
+            <div>{tool.icon}</div>
+          </OverlayTrigger>
+        </Col>
+      ))}
     </Row>
   );
-}
+};
 
 export default Toolstack;

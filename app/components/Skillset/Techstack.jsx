@@ -1,55 +1,40 @@
 "use client";
 
 import React from "react";
-import { Col, Row } from "react-bootstrap";
+import { Col, Row, Tooltip, OverlayTrigger } from "react-bootstrap";
 import {
   DiJavascript1,
-  DiReact,
-  DiNodejs,
-  DiGit,
+  DiCss3,
+  DiJava,
+  DiPython,
 } from "react-icons/di";
-import {
-  SiMaterialdesign,
-  SiGraphql,
-  SiSolidity,
-  SiRedux,
-  SiMongodb,
-  SiHtml5
-} from "react-icons/si";
+import { SiHtml5, SiCplusplus, SiCircuitverse } from "react-icons/si"; // Updated import
+import { GiCircuitry } from "react-icons/gi"; // New import
+
+const techs = [
+  { icon: <SiHtml5 />, name: "HTML" },
+  { icon: <DiCss3 />, name: "CSS" },
+  { icon: <DiJavascript1 />, name: "JavaScript" },
+  { icon: <SiCplusplus />, name: "C++" },
+  { icon: <DiJava />, name: "Java" },
+  { icon: <DiPython />, name: "Python" },
+  { icon: <SiCircuitverse />, name: "Electronic Schematic" }, // Shortened name
+  { icon: <GiCircuitry />, name: "PCB Design" } // Updated icon
+];
 
 const Techstack = () => {
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiHtml5 />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiJavascript1 />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiNodejs />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiReact />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiRedux />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiMongodb />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiGraphql />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiSolidity />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiMaterialdesign />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiGit />
-      </Col>
+      {techs.map((tech, index) => (
+        <Col key={index} xs={4} md={2} className="tech-icons">
+          <OverlayTrigger
+            placement="top"
+            overlay={<Tooltip>{tech.name}</Tooltip>}
+          >
+            <div>{tech.icon}</div>
+          </OverlayTrigger>
+        </Col>
+      ))}
     </Row>
   );
 }

@@ -17,11 +17,11 @@ const raleway = Raleway({
 });
 
 export default function RootLayout({ children }) {
-  const [load, updateLoad] = useState(true);
+  const [load, setLoad] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      updateLoad(false);
+      setLoad(false);
     }, 1200);
 
     return () => clearTimeout(timer);
@@ -31,9 +31,9 @@ export default function RootLayout({ children }) {
     <html lang="en" className={raleway.className}>
       <body>
         <Background />
-        <Preloader load={load} />
+        <Preloader load={load} /> {/* Update Preloader to consider only load */}
         <div id={load ? "no-scroll" : "scroll"}>
-          <Navbar />
+          <Navbar /> {/* Remove setPageLoading prop */}
           <ScrollToTop />
           {children}
           <Footer />

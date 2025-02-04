@@ -3,6 +3,7 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { CgWebsite } from "react-icons/cg";
 import { BsGithub } from "react-icons/bs";
+import Image from "next/image";
 
 const ProjectCard = (props) => {
   return (
@@ -15,17 +16,19 @@ const ProjectCard = (props) => {
         alignContent: "space-between",
       }}
     >
-      <Card.Img
-        variant="top"
-        src={props.imgPath}
-        alt="card-img"
-        style={{
-          height: "200px",
-          objectFit: "contain",
-          alignSelf: "flex-start",
-          borderRadius: "10%",
-        }}
-      />
+      <div style={{ position: "relative", width: "100%", paddingBottom: "56.25%" }}>
+        <Image
+          src={props.imgPath}
+          alt="card-img"
+          fill
+          style={{
+            objectFit: "contain",
+            borderRadius: "10%",
+            marginTop: "10px",
+            marginBottom: "10px",
+          }}
+        />
+      </div>
       <Card.Body
         style={{
           display: "flex",
@@ -35,7 +38,7 @@ const ProjectCard = (props) => {
         }}
       >
         <Card.Title>{props.title}</Card.Title>
-        <Card.Text style={{ textAlign: "justify",fontSize:"15px" }}>
+        <Card.Text style={{ textAlign: "justify", fontSize: "15px" }}>
           {props.description}
         </Card.Text>
         <Button

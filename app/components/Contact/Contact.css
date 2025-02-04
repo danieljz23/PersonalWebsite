@@ -24,31 +24,41 @@
 {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 2rem; /* Reduce the gap between form elements */
     align-items: center;
     
 }
 
-.c-right .user{
+.c-right .user {
     width: 24rem;
     height: 3rem;
     padding: 0.3em;
     outline: none;
-    border: 2px solid #40008a;
+    border: 2px solid #ff8000; /* Bright Orange */
     border-radius: 8px;
     font-size: 19px;
-    color: white   
+    color: white;
+    background-color: transparent; /* Keep it clean for dark themes */
 }
 
-.c-right .user:hover{
-    box-shadow: 0 0 9px #7500fa;
+.c-right .user:hover {
+    box-shadow: 0 0 9px #ff8000; /* Glowing Orange Hover Effect */
+}
+
+.button:hover {
+    color: lightgray;
+    box-shadow: 0 0 20px rgba(255, 128, 0, 1);
+}
+
+.button{
+    margin-top: -1rem;
 }
 
 input{
     background-color: var(--purple)
 }
 textarea{
-    height: 5rem!important;
+    height: 8rem!important;
     background-color: var(--purple)
 }
 

@@ -7,10 +7,17 @@ function ScrollToTop() {
   const pathname = usePathname();
   
   useEffect(() => {
-    window.scrollTo(0, 0);
+    let mounted = true;
+    
+    if (mounted) {
+      window.scrollTo(0, 0);
+    }
+
+    return () => {
+      mounted = false;
+    };
   }, [pathname]);
 
   return null;
 }
-
 export default ScrollToTop;

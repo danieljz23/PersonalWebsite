@@ -17,7 +17,7 @@ const resumeLink = "/assets/DanielResume.pdf";
 const resumeImage = "/assets/DanielResume.jpg";
 
 const Resume = () => {
-  const [width, setWidth] = useState(1200);
+  const [width, setWidth] = useState(300); // Adjusted initial width
 
   useEffect(() => {
     setWidth(window.innerWidth);
@@ -26,12 +26,12 @@ const Resume = () => {
   return (
     <div>
       <Container fluid className="resume-section">
-        <Row style={{ justifyContent: "center", position: "relative" }}>
+        <Row style={{ justifyContent: "center", position: "relative", marginTop: "60px", marginBottom: "50px" }}>
           <Button
             variant="primary"
             href={resumeLink}
             target="_blank"
-            style={{ maxWidth: "250px" }}
+            style={{ maxWidth: "300px", fontSize: "1.2em", padding: "10px 20px" }}
           >
             <AiOutlineDownload />
             &nbsp;Download Resume
@@ -57,12 +57,12 @@ const Resume = () => {
           </div>
         </Row>
 
-        <Row style={{ justifyContent: "center", position: "relative" }}>
+        <Row style={{ justifyContent: "center", position: "relative", marginTop: "50px", marginBottom: "50px" }}>
           <Button
             variant="primary"
             href={resumeLink}
             target="_blank"
-            style={{ maxWidth: "250px" }}
+            style={{ maxWidth: "300px", fontSize: "1.2em", padding: "10px 20px" }}
           >
             <AiOutlineDownload />
             &nbsp;Download Resume

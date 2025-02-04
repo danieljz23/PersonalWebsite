@@ -1,77 +1,64 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import {
-  AiFillGithub,
-  AiOutlineTwitter
-} from "react-icons/ai";
+import { AiFillGithub, AiOutlineMail } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
-import { SiLeetcode } from "react-icons/si";
-import logo from "../../../public/assets/sLogo.png";
+import Link from "next/link";
+import logo from "../../../public/assets/SelfLogo.jpg";
+import Image from "next/image";
 
 const Footer = () => {
-    let date = new Date();
-    let year = date.getFullYear();
-    return (
-      <Container fluid className="footer">
-        <Row>
-          <Col md="4" className="footer-copywright">
-            <span>Dedicated to creating impactful solutions!</span>
-          </Col>
-          <Col md="4" className="footer-copywright">
-            <span>Copyright © {year}</span>
-            <img src={logo} className="img-fluid logo" alt="brand" />
-          </Col>
-          <Col md="4" className="footer-body">
-            <ul className="footer-icons">
-              <li className="social-icons">
-                <a
-                  href="https://github.com/19sajib"
-                  style={{ color: "white" }}
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  aria-label="github"
-                >
-                  <AiFillGithub />
-                </a>
-              </li>
-              <li className="social-icons">
-                <a
-                  href="https://twitter.com/19sajib"
-                  style={{ color: "white" }}
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  aria-label="twitter"
-                >
-                  <AiOutlineTwitter />
-                </a>
-              </li>
-              <li className="social-icons">
-                <a
-                  href="https://www.linkedin.com/in/19sajib/"
-                  style={{ color: "white" }}
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  aria-label="linkedin"
-                >
-                  <FaLinkedinIn />
-                </a>
-              </li>
-              <li className="social-icons">
-                <a
-                  href="https://leetcode.com/19sajib/"
-                  style={{ color: "white" }}
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  aria-label="leetcode"
-                >
-                  <SiLeetcode />
-                </a>
-              </li>
-            </ul>
-          </Col>
-        </Row>
-      </Container>
-    );  
-}
+  return (
+    <Container fluid className="footer">
+      <Row>
+        <Col md="4" className="footer-copywright">
+          <Image src={logo} alt="brand" className="img-fluid logobottom" />
+          <span>Daniel | Engineer & Developer</span>
+        </Col>
+        <Col md="4" className="footer-copywright">
+          <Link href="/contact">
+            <span style={{ textDecoration: "underline", color: "white" }}>
+              Contact Me!
+            </span>
+          </Link>
+        </Col>
+        <Col md="4" className="footer-body">
+          <ul className="home-about-social-links">
+            <li className="social-icons">
+              <a
+                href="https://github.com/SquireDuck"
+                target="_blank"
+                rel="noreferrer"
+                className="icon-colour home-social-icons"
+                aria-label="github"
+              >
+                <AiFillGithub />
+              </a>
+            </li>
+            <li className="social-icons">
+              <a
+                href="https://www.linkedin.com/in/daniel-jieru-zhou/"
+                target="_blank"
+                rel="noreferrer"
+                className="icon-colour home-social-icons"
+                aria-label="linkedin"
+              >
+                <FaLinkedinIn />
+              </a>
+            </li>
+            <li className="social-icons">
+              <a
+                href="mailto:daniel.jieru.zhou@gmail.com"
+                className="icon-colour home-social-icons"
+                aria-label="email"
+              >
+                <AiOutlineMail />
+              </a>
+            </li>
+          </ul>
+        </Col>
+      </Row>
+    </Container>
+  );
+};
 
-export default Footer
+export default Footer;
