@@ -421,7 +421,7 @@ button:focus {
 
 .home-about-social {
   text-align: center !important;
-  padding-top: 5vh; /* Use viewport height for relative padding */
+  padding-top: 7vh; /* Use viewport height for relative padding */
   padding-bottom: 5vh; /* Add bottom padding for consistency */
   color: white !important;
 }

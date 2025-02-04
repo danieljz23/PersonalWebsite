@@ -6,12 +6,16 @@ import Image from "next/image";
 import selfie from "../../public/assets/SelfieFade.png";
 import About from "../components/Home/About";
 import Type from "../components/Home/Type";
+import Tilt from "react-parallax-tilt";
 
 const Home = () => {
-
   return (
     <section>
-      <Container fluid className="home-section lighter-background geometric-bg" id="home">
+      <Container
+        fluid
+        className="home-section lighter-background geometric-bg"
+        id="home"
+      >
         <div className="circle-3"></div>
         <Container className="home-content">
           <Row className="align-items-center">
@@ -25,10 +29,7 @@ const Home = () => {
 
               <h1 className="heading-name">
                 I'M
-                <strong className="main-name">
-                  {" "}
-                  Daniel Zhou
-                </strong>
+                <strong className="main-name"> Daniel Zhou</strong>
               </h1>
 
               <div style={{ padding: 50, textAlign: "left" }}>
@@ -36,14 +37,20 @@ const Home = () => {
               </div>
             </Col>
 
-            <Col md={5} style={{ paddingBottom: 20 }} className="justify-center">
-              <Image
-                src={selfie}
-                alt="self pic"
-                className="img-fluid fade-to-black"
-                style={{ maxWidth: "100%", height: "auto" }}
-                priority 
-              />
+            <Col
+              md={5}
+              style={{ paddingBottom: 20 }}
+              className="justify-center"
+            >
+              <Tilt>
+                <Image
+                  src={selfie}
+                  alt="self pic"
+                  className="img-fluid fade-to-black"
+                  style={{ maxWidth: "100%", height: "auto" }}
+                  priority
+                />
+              </Tilt>
             </Col>
           </Row>
         </Container>
@@ -54,6 +61,3 @@ const Home = () => {
 };
 
 export default Home;
-
-
-
