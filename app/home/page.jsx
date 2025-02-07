@@ -6,7 +6,12 @@ import Image from "next/image";
 import selfie from "../../public/assets/SelfieFade.png";
 import About from "../components/Home/About";
 import Type from "../components/Home/Type";
-import Tilt from "react-parallax-tilt";
+import dynamic from "next/dynamic";
+import Head from "next/head";
+
+const Tilt = dynamic(() => import("react-parallax-tilt"), { ssr: false });
+
+
 
 const Home = () => {
   return (

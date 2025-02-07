@@ -26,6 +26,8 @@ const ProjectCard = (props) => {
             borderRadius: "10%",
             marginTop: "10px",
             marginBottom: "10px",
+            paddingLeft: "10px",
+            paddingRight: "10px"
           }}
         />
       </div>

@@ -617,7 +617,7 @@ height: auto !important;
 }
 
 .project-card-view {
-box-shadow: 0 4px 5px 3px rgb(72, 0, 155) !important;
+box-shadow: 0 4px 5px 3px rgba(255, 149, 0, 0.8) !important;
 /* box-shadow: 0 4px 5px 3px rgba(119, 53, 136, 0.459) !important; */
 color: white !important;
 background-color: transparent !important;
@@ -629,7 +629,7 @@ height: 100% !important;
 transform: scale(1.02) !important;
 overflow: hidden !important;
 /* box-shadow: 0 4px 4px 5px rgba(129, 72, 144, 0.561) !important; */
-box-shadow: 0 4px 5px 3px rgba(117, 0, 250, 1) !important;
+box-shadow: 0 4px 5px 3px rgba(255, 165, 0, 0.8) !important;
 }
 
 .blog-card {
@@ -963,4 +963,3 @@ padding-top: 10px !important;
   border-radius: 6px; /* Slightly rounded corners */
   padding: 10px 14px; /* Add spacing */
 }
-

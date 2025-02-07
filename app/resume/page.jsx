@@ -6,21 +6,24 @@ import Button from "react-bootstrap/Button";
 import { AiOutlineDownload } from "react-icons/ai";
 import Image from "next/image";
 
-// import pdf from "../../public/assets/DanielResume.pdf"
-
-import { Document, Page, pdfjs } from "react-pdf";
-import "react-pdf/dist/esm/Page/AnnotationLayer.css";
-import "react-pdf/dist/esm/Page/TextLayer.css";
-pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf_viewer.min.js`;
-
 const resumeLink = "/assets/DanielResume.pdf"; 
 const resumeImage = "/assets/DanielResume.jpg";
 
 const Resume = () => {
-  const [width, setWidth] = useState(300); // Adjusted initial width
+  const [isClient, setIsClient] = useState(false); // Check if it's client-side
+  const [width, setWidth] = useState(850);         // Default width for SSR
 
   useEffect(() => {
-    setWidth(window.innerWidth);
+    setIsClient(true); // Mark as client after hydration
+
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+
+    handleResize(); // Set initial width
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
@@ -39,22 +42,25 @@ const Resume = () => {
         </Row>
 
         <Row className="resume">
-          <div style={{ 
-            position: 'relative',
-            width: width > 786 ? '80%' : '100%',
-            margin: 'auto',
-            aspectRatio: '8.5 / 11'  // Standard US letter size ratio
-          }}>
-            <Image
-              src={resumeImage}
-              alt="Resume"
-              fill
-              priority
-              style={{ 
-                objectFit: 'contain'
+          {isClient && ( // Render only after hydration
+            <div
+              style={{
+                position: "relative",
+                width: width > 786 ? "80vw" : "95vw", 
+                maxWidth: "1000px",
+                margin: "auto",
+                aspectRatio: "8.5 / 11",
               }}
-            />
-          </div>
+            >
+              <Image
+                src={resumeImage}
+                alt="Resume"
+                fill
+                priority
+                style={{ objectFit: "contain" }}
+              />
+            </div>
+          )}
         </Row>
 
         <Row style={{ justifyContent: "center", position: "relative", marginTop: "50px", marginBottom: "50px" }}>
@@ -70,7 +76,7 @@ const Resume = () => {
         </Row>
       </Container>
     </div>
-  )
-}
+  );
+};
 
-export default Resume
+export default Resume;
