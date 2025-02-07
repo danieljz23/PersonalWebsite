@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { AiFillGithub, AiOutlineMail } from "react-icons/ai"; // Added AiOutlineMail
 import { FaLinkedinIn } from "react-icons/fa";
-import "./Socials.css";
+import "../../styles/Socials.css";
 
 const Social = () => {
   return (
