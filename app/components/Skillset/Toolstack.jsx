@@ -29,7 +29,7 @@ const Toolstack = () => {
         <Col key={index} xs={4} md={2} className="tech-icons">
           <OverlayTrigger
             placement="top"
-            overlay={<Tooltip>{tool.name}</Tooltip>}
+            overlay={<Tooltip style={{opacity: 1}}>{tool.name}</Tooltip>}
           >
             <div>{tool.icon}</div>
           </OverlayTrigger>
