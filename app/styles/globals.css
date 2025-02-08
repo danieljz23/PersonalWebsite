@@ -954,12 +954,23 @@ padding-top: 10px !important;
   background-color: rgba(89, 0, 190, 0.1);
   pointer-events: none;
 }
+.tooltip {
+  backdrop-filter: none !important; /* Ensure no transparency effects */
+  -webkit-backdrop-filter: none !important; /* Fix for Safari */
+}
 
 .tooltip .tooltip-inner {
   font-size: 2rem; /* Adjust font size */
   font-weight: bold; /* Make text bold */
   font-family: "Arial", sans-serif; /* Customize font */
-  color: #d35400 !important; /* White text for contrast */
+  color: #d35400 !important; /* Text color */
   border-radius: 6px; /* Slightly rounded corners */
   padding: 10px 14px; /* Add spacing */
+  background-color: black !important; /* Ensure solid black background */
+  opacity: 1 !important; /* Force full opacity */
+}
+
+.tooltip-arrow::before {
+  border-color: black !important; /* Match arrow color */
+  opacity: 1 !important;
 }
