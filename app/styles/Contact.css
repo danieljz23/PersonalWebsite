@@ -103,4 +103,10 @@ textarea{
         width: 16rem;
     }
 
+    .extra-space {
+        gap: 0rem;
+        flex-wrap: wrap;
+        margin-left: 0rem;
+    }
+
 }
