@@ -76,6 +76,22 @@ textarea{
     left: 8rem;
 }
 
+@media screen and (max-width: 1023px) {
+    .contact-form {
+        flex-direction: column;
+        gap: 5rem;
+        height: auto;
+    }
+    .c-right .user {
+        width: 20rem;
+    }
+    .extra-space {
+        gap: 2rem;
+        flex-wrap: nowrap;
+        margin-left: -3rem;
+    }
+}
+
 @media screen and (max-width: 480px) {
     .contact-form{
         padding: 0;

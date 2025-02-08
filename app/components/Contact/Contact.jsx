@@ -55,7 +55,7 @@ const Contact = () => {
   return (
     <Container style={{ paddingTop: "50px" }}>
       <Row
-        className="items-center justify-center"
+        className="extra-space items-center justify-center"
         style={{ marginTop: "100px" }}
       >
         <Col
