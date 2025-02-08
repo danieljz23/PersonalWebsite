@@ -11,16 +11,16 @@ const Social = () => {
         <Col
           md={12}
           className="contact-social"
-          style={{ justifyItems: "center" }}
+          style={{ justifyItems: "center", alignContent: "center" }}
         >
           <div className="contact-text">
-            <h1 style={{ fontWeight: "normal", fontSize: "1.4em"}}>FIND ME ON</h1> {/* Removed bold style */}
-            <p style={{ fontSize: "0.6em" }}> {/* Decreased font size */}
+            <h1 style={{ fontWeight: "normal", fontSize: "1.4em"}}>FIND ME ON</h1>
+            <p style={{ fontSize: "0.6em" }}> 
               Please don't hesitate to reach out to me and{" "}
               <span className="yellow">connect.</span>
             </p>
           </div>
-          <ul className="contact-social-links">
+          <ul className="contact-social-links" style={{ justifyContent: "center" }}>
             <li className="contact-icons">
               <a
                 href="https://github.com/SquireDuck"
