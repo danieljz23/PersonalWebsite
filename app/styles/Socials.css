@@ -17,7 +17,7 @@
   display: flex !important;
   position: relative !important;
   padding-inline-start: 0 !important;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .contact-social-icons {
@@ -27,7 +27,7 @@
   height: 90px !important; /* Increased height */
   text-align: center !important;
   font-size: 3em !important; /* Increased font size */
-  line-height: 80px !important; /* Adjusted line height to match height */
+  line-height: 76px !important; /* Adjusted line height to match height */
   background: rgba(110, 110, 110, 0.972) !important;
   border-radius: 50% !important;
   transition: 0.5s !important;
@@ -78,10 +78,19 @@
     width: 60px !important; /* Increased width */
     height: 60px !important; /* Increased height */
     text-align: center !important;
-    font-size: 3em !important; /* Increased font size */
-    line-height: 80px !important; /* Adjusted line height to match height */
+    font-size: 2em !important; /* Increased font size */
+    line-height: 50px !important; /* Adjusted line height to match height */
     background: rgba(110, 110, 110, 0.972) !important;
     border-radius: 50% !important;
     transition: 0.5s !important;
+  }
+  .contact-icons {
+    display: inline-block !important;
+    padding-right: 5px;
+    padding-left: 5px;
+    flex: 1 1 auto; /* Allow flexible shrinking */
+    max-width: 150px; /* Set a maximum width */
+    min-width: 40px; /* Set a minimum width */
+    margin: 5px; /* Add some margin for spacing */
   }
 }
