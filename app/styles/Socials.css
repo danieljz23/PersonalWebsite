@@ -14,9 +14,10 @@
 .contact-social-links {
   justify-content: center !important;
   padding-top: 15px !important;
-  display: inline-block !important;
+  display: flex !important;
   position: relative !important;
   padding-inline-start: 0 !important;
+  flex-wrap: wrap;
 }
 
 .contact-social-icons {
@@ -60,6 +61,9 @@
   display: inline-block !important;
   padding-right: 15px;
   padding-left: 15px;
+  flex: 1 1 100px; /* Allow items to shrink but maintain a minimum width */
+  max-width: 150px; /* Set a maximum width */
+  margin: 10px; /* Add some margin for spacing */
 }
 
 .icon-color {
