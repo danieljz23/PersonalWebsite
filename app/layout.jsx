@@ -42,10 +42,10 @@ export default function RootLayout({ children }) {
       <body>
         <Background />
         <Preloader load={load} />
-        <div id="scroll">
+        <div className="app-container">
           <Navbar />
           <ScrollToTop />
-          <main>{children}</main>
+          <main className="main-content">{children}</main>
           {showFooter && <Footer />}
         </div>
       </body>
