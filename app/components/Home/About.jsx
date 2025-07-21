@@ -63,14 +63,14 @@ const About = () => {
             <h1>FIND ME ON</h1>
             <p>
               Please don't hesitate to reach out to me and{" "}
-              <Link href='/contact'>
+              <Link href="/contact">
                 <span className="yellow underline">connect.</span>
               </Link>
             </p>
             <ul className="home-about-social-links">
               <li className="social-icons">
                 <a
-                  href="https://github.com/SquireDuck"
+                  href="https://github.com/danieljz23"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"

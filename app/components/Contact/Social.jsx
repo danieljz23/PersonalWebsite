@@ -14,16 +14,21 @@ const Social = () => {
           style={{ justifyItems: "center", alignContent: "center" }}
         >
           <div className="contact-text">
-            <h1 style={{ fontWeight: "normal", fontSize: "1.4em"}}>FIND ME ON</h1>
-            <p style={{ fontSize: "0.6em" }}> 
+            <h1 style={{ fontWeight: "normal", fontSize: "1.4em" }}>
+              FIND ME ON
+            </h1>
+            <p style={{ fontSize: "0.6em" }}>
               Please don't hesitate to reach out to me and{" "}
               <span className="yellow">connect.</span>
             </p>
           </div>
-          <ul className="contact-social-links" style={{ justifyContent: "center" }}>
+          <ul
+            className="contact-social-links"
+            style={{ justifyContent: "center" }}
+          >
             <li className="contact-icons">
               <a
-                href="https://github.com/SquireDuck"
+                href="https://github.com/danieljz23"
                 target="_blank"
                 rel="noreferrer"
                 className="icon-color  contact-social-icons"
