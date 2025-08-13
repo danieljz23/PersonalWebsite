@@ -2,13 +2,8 @@
 
 import React from "react";
 import { Col, Row, Tooltip, OverlayTrigger } from "react-bootstrap";
-import {
-  DiJavascript1,
-  DiCss3,
-  DiJava,
-  DiPython,
-} from "react-icons/di";
-import { SiHtml5, SiCplusplus, SiCircuitverse } from "react-icons/si"; // Updated import
+import { DiJavascript1, DiCss3, DiJava, DiPython } from "react-icons/di";
+import { SiHtml5, SiCplusplus, SiCircuitverse, SiKotlin } from "react-icons/si"; // Updated import
 import { GiCircuitry } from "react-icons/gi"; // New import
 
 const techs = [
@@ -20,7 +15,7 @@ const techs = [
   { icon: <DiPython />, name: "Python" },
   { icon: <SiCircuitverse />, name: "Electronic Schematic" }, // Shortened name
   { icon: <GiCircuitry />, name: "PCB Design" },
-  { icon: <SiKotlin />, name: "Kotlin" }
+  { icon: <SiKotlin />, name: "Kotlin" },
 ];
 
 const Techstack = () => {
@@ -38,6 +33,6 @@ const Techstack = () => {
       ))}
     </Row>
   );
-}
+};
 
 export default Techstack;
