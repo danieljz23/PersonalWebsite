@@ -16,7 +16,9 @@ const ProjectCard = (props) => {
         alignContent: "space-between",
       }}
     >
-      <div style={{ position: "relative", width: "100%", paddingBottom: "56.25%" }}>
+      <div
+        style={{ position: "relative", width: "100%", paddingBottom: "56.25%" }}
+      >
         <Image
           src={props.imgPath}
           alt="card-img"
@@ -27,7 +29,7 @@ const ProjectCard = (props) => {
             marginTop: "10px",
             marginBottom: "10px",
             paddingLeft: "10px",
-            paddingRight: "10px"
+            paddingRight: "10px",
           }}
         />
       </div>
