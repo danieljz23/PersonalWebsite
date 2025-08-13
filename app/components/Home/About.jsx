@@ -25,7 +25,7 @@ const About = () => {
                 dynamic and results-driven engineer
               </span>{" "}
               with expertise in
-              <b className="yellow"> C++ programming, web development, </b> and
+              <b className="yellow"> C++ programming, web and app development, </b> and
               <b className="yellow"> electrical systems integration.</b> My work
               spans
               <b className="yellow"> PCB design & assembly, </b> custom

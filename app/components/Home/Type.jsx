@@ -21,6 +21,7 @@ const Type = () => {
         "Electrical Systems Integration",
         "React Web Developer",
         "Perseverant Problem Solver",
+        "App Developer (React Native & Kotlin)"
       ]}
       multiTextDelay={1000}
       typeSpeed={50}

@@ -19,7 +19,8 @@ const techs = [
   { icon: <DiJava />, name: "Java" },
   { icon: <DiPython />, name: "Python" },
   { icon: <SiCircuitverse />, name: "Electronic Schematic" }, // Shortened name
-  { icon: <GiCircuitry />, name: "PCB Design" } // Updated icon
+  { icon: <GiCircuitry />, name: "PCB Design" },
+  { icon: <SiKotlin />, name: "Kotlin" }
 ];
 
 const Techstack = () => {
