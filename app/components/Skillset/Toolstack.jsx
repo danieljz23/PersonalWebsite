@@ -11,12 +11,14 @@ import {
   SiAutodesk
 } from "react-icons/si";
 import { GiSolderingIron } from "react-icons/gi"; // Best match for soldering
+import { SiSupabase } from "react-icons/si";
 
 const tools = [
   { icon: <SiReact />, name: "React" },
   { icon: <SiNextdotjs />, name: "Next.js" },
   { icon: <SiMongodb />, name: "MongoDB" },
   { icon: <SiTailwindcss />, name: "Tailwind CSS" },
+  { icon: <SiSupabase />, name: "Supabase" },
   { icon: <SiArduino />, name: "Arduino IDE" },
   { icon: <SiAutodesk />, name: "Autodesk Fusion 360" },
   { icon: <GiSolderingIron />, name: "Soldering" }
