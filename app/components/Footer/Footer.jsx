@@ -1,64 +1,32 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import { AiFillGithub, AiOutlineMail } from "react-icons/ai";
-import { FaLinkedinIn } from "react-icons/fa";
-import Link from "next/link";
-import logo from "../../../public/assets/SelfLogo.jpg";
-import Image from "next/image";
+import { siteConfig } from "../../data/site";
 
-const Footer = () => {
+export default function Footer() {
+  const { name, github, linkedin, email } = siteConfig;
+  const year = new Date().getFullYear();
+
   return (
-    <Container fluid className="footer">
-      <Row>
-        <Col md="4" className="footer-copywright">
-          <Image src={logo} alt="brand" className="img-fluid logobottom" />
-          <span>Daniel | Engineer & Developer</span>
-        </Col>
-        <Col md="4" className="footer-copywright">
-          <Link href="/contact">
-            <span style={{ textDecoration: "underline", color: "white" }}>
-              Contact Me!
-            </span>
-          </Link>
-        </Col>
-        <Col md="4" className="footer-body">
-          <ul className="home-about-social-links">
-            <li className="social-icons">
-              <a
-                href="https://github.com/danieljz23"
-                target="_blank"
-                rel="noreferrer"
-                className="icon-colour home-social-icons"
-                aria-label="github"
-              >
-                <AiFillGithub />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="https://www.linkedin.com/in/daniel-jieru-zhou/"
-                target="_blank"
-                rel="noreferrer"
-                className="icon-colour home-social-icons"
-                aria-label="linkedin"
-              >
-                <FaLinkedinIn />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="mailto:daniel.jieru.zhou@gmail.com"
-                className="icon-colour home-social-icons"
-                aria-label="email"
-              >
-                <AiOutlineMail />
-              </a>
-            </li>
-          </ul>
-        </Col>
-      </Row>
-    </Container>
+    <footer className="relative border-t border-white/5 bg-slate-950/50">
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-8 sm:flex-row">
+        <div className="flex items-center gap-3">
+          <span className="flex h-6 w-6 items-center justify-center rounded border border-violet-500/20 font-mono text-[10px] text-violet-400">
+            DZ
+          </span>
+          <p className="text-sm text-slate-500">
+            © {year} {name}
+          </p>
+        </div>
+        <div className="flex items-center gap-6">
+          <a href={github} target="_blank" rel="noopener noreferrer" className="text-sm text-slate-500 hover:text-violet-400 transition-colors">
+            GitHub
+          </a>
+          <a href={linkedin} target="_blank" rel="noopener noreferrer" className="text-sm text-slate-500 hover:text-violet-400 transition-colors">
+            LinkedIn
+          </a>
+          <a href={`mailto:${email}`} className="text-sm text-slate-500 hover:text-violet-400 transition-colors">
+            Email
+          </a>
+        </div>
+      </div>
+    </footer>
   );
-};
-
-export default Footer;
+}
