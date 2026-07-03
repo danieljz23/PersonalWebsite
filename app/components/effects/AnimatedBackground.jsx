@@ -12,15 +12,17 @@ export default function AnimatedBackground() {
     >
       <div className="absolute inset-0 bg-[#030712]" />
 
-      {/* CSS-only gradients — GPU-friendly, no JS loop */}
       <div
         className={`absolute -top-1/4 left-1/4 h-[600px] w-[600px] rounded-full bg-violet-600/15 blur-[100px] ${reduced ? "" : "animate-bg-drift-a"}`}
       />
       <div
         className={`absolute top-1/3 -right-1/4 h-[500px] w-[500px] rounded-full bg-cyan-500/10 blur-[90px] ${reduced ? "" : "animate-bg-drift-b"}`}
       />
+      <div
+        className={`absolute -bottom-1/4 left-1/3 h-[400px] w-[400px] rounded-full bg-indigo-600/8 blur-[80px] ${reduced ? "" : "animate-bg-drift-a"}`}
+        style={{ animationDelay: "4s" }}
+      />
 
-      {/* Static grid — no animation */}
       <div
         className="absolute inset-0 opacity-[0.035]"
         style={{
@@ -29,6 +31,8 @@ export default function AnimatedBackground() {
           backgroundSize: "80px 80px",
         }}
       />
+
+      <div className="absolute inset-0 noise-overlay opacity-[0.025]" />
 
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,#030712_80%)]" />
     </div>

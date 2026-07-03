@@ -88,9 +88,9 @@ export default function Hero() {
               custom={1}
               className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight"
             >
-              <span className="text-white">{name.split(" ")[0]}</span>
+              <span className="text-white glow-text">{name.split(" ")[0]}</span>
               <br />
-              <span className="bg-gradient-to-r from-violet-400 via-cyan-300 to-violet-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-violet-400 via-cyan-300 to-violet-400 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-x">
                 {name.split(" ")[1]}
               </span>
             </motion.h1>
@@ -98,7 +98,7 @@ export default function Hero() {
             <motion.p
               variants={fadeUp}
               custom={2}
-              className="mt-6 text-xl md:text-2xl font-medium text-slate-200"
+              className="mt-6 text-xl md:text-2xl font-medium gradient-text-subtitle"
             >
               {tagline}
             </motion.p>
@@ -134,7 +134,15 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-slate-950/60">
+            {!reduced && (
+              <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-violet-500/25 via-cyan-500/15 to-transparent blur-2xl opacity-70 animate-bg-drift-a pointer-events-none" />
+            )}
+
+            <motion.div
+              className="relative overflow-hidden rounded-2xl border border-white/10 bg-slate-950/60"
+              animate={reduced ? {} : { y: [0, -8, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            >
               <div className="relative h-80 w-64 sm:h-96 sm:w-72 mx-auto">
                 <Image
                   src={headshot}
@@ -149,13 +157,13 @@ export default function Hero() {
 
               <div className="border-t border-white/10 bg-slate-950/90 px-4 py-3">
                 <div className="flex items-center gap-2">
-                  <span className="h-2 w-2 rounded-full bg-emerald-400" />
+                  <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
                   <span className="font-mono text-[10px] uppercase tracking-widest text-slate-400">
                     Systems Online
                   </span>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>

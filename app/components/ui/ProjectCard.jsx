@@ -5,6 +5,31 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import MagneticButton from "./MagneticButton";
 import { fadeUp } from "../../lib/motion";
+import { useReducedMotion } from "../../hooks/useReducedMotion";
+
+function PhoneMockup({ src, alt, onError }) {
+  return (
+    <div className="relative mx-auto w-[168px] sm:w-[188px] md:w-[204px]">
+      {/* Device frame */}
+      <div className="relative rounded-[2.25rem] border-[3px] border-slate-600/90 bg-slate-900 p-[7px] shadow-2xl shadow-black/50">
+        {/* Notch */}
+        <div className="absolute top-[14px] left-1/2 z-10 h-[5px] w-14 -translate-x-1/2 rounded-full bg-slate-800" />
+        {/* Screen — tall aspect ratio so full screenshot fits */}
+        <div className="relative aspect-[9/19.5] w-full overflow-hidden rounded-[1.65rem] bg-black">
+          <Image
+            src={src}
+            alt={alt}
+            fill
+            className="object-contain object-center transition-transform duration-500 group-hover:scale-[1.03]"
+            sizes="204px"
+            onError={onError}
+            priority
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function ProjectImage({ project }) {
   const [src, setSrc] = useState(project.image);
@@ -19,6 +44,23 @@ function ProjectImage({ project }) {
     }
   };
 
+  if (mockup === "phone") {
+    if (failed) {
+      return (
+        <div className="flex h-[360px] w-[204px] items-center justify-center rounded-[2rem] border border-dashed border-white/20 bg-slate-900/80 text-xs text-slate-500 font-mono px-4 text-center">
+          Image missing
+        </div>
+      );
+    }
+    return (
+      <PhoneMockup
+        src={src}
+        alt={`${title} preview`}
+        onError={handleError}
+      />
+    );
+  }
+
   const imageContent = failed ? (
     <div className="flex h-full w-full items-center justify-center bg-slate-900/80">
       <p className="text-xs text-slate-500 font-mono px-4 text-center">
@@ -30,31 +72,18 @@ function ProjectImage({ project }) {
       src={src}
       alt={`${title} preview`}
       fill
-      className={`object-cover transition-transform duration-500 group-hover:scale-[1.03] ${
-        mockup === "phone" ? "object-top" : ""
+      className={`transition-transform duration-500 group-hover:scale-[1.03] ${
+        mockup === "phone-wide" ? "object-contain object-center bg-black" : "object-cover"
       }`}
       sizes="(max-width: 768px) 100vw, 50vw"
       onError={handleError}
-      loading={project.id === "leechy" ? "eager" : "lazy"}
+      loading="lazy"
     />
   );
 
-  if (mockup === "phone") {
-    return (
-      <div className="relative mx-auto h-[300px] w-[150px] md:h-[340px] md:w-[170px]">
-        <div className="absolute inset-0 rounded-[2rem] border-2 border-slate-700/80 bg-slate-950 shadow-xl">
-          <div className="absolute top-3 left-1/2 -translate-x-1/2 h-1 w-10 rounded-full bg-slate-700" />
-          <div className="absolute inset-[6px] top-8 overflow-hidden rounded-[1.5rem]">
-            {imageContent}
-          </div>
-        </div>
-      </div>
-    );
-  }
-
   if (mockup === "phone-wide") {
     return (
-      <div className="relative h-[200px] md:h-[240px] w-full overflow-hidden rounded-xl border border-white/10 bg-slate-950">
+      <div className="relative h-[220px] md:h-[260px] w-full overflow-hidden rounded-xl border border-white/10 bg-black">
         {imageContent}
       </div>
     );
@@ -69,17 +98,24 @@ function ProjectImage({ project }) {
 }
 
 export default function ProjectCard({ project, index }) {
+  const reduced = useReducedMotion();
   const isEven = index % 2 === 0;
 
   return (
     <motion.article
       variants={fadeUp}
       custom={index}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.1 }}
+      whileHover={reduced ? {} : { y: -6 }}
+      transition={{ type: "spring", stiffness: 300, damping: 24 }}
       className={`group relative ${isEven ? "" : "md:mt-12"}`}
     >
-      <div className={`absolute -inset-px rounded-2xl bg-gradient-to-br ${project.gradient} opacity-50`} />
+      <div className={`absolute -inset-px rounded-2xl bg-gradient-to-br ${project.gradient} opacity-40 group-hover:opacity-70 transition-opacity duration-500`} />
+      <div className="absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 animated-border pointer-events-none" />
 
-      <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-slate-950/70 transition-colors duration-300 group-hover:border-violet-500/25">
+      <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-slate-950/70 transition-all duration-500 group-hover:border-violet-500/30 group-hover:shadow-xl group-hover:shadow-violet-500/10">
         <div className={`grid gap-0 ${isEven ? "md:grid-cols-2" : "md:grid-cols-2 md:[direction:rtl]"}`}>
           <div className={`p-6 md:p-8 ${isEven ? "" : "md:[direction:ltr]"}`}>
             <p className="font-mono text-xs uppercase tracking-widest text-slate-500 mb-1">
@@ -103,7 +139,7 @@ export default function ProjectCard({ project, index }) {
               {project.tech.map((t) => (
                 <span
                   key={t}
-                  className="rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-xs text-slate-300"
+                  className="rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-xs text-slate-300 transition-colors duration-300 group-hover:border-violet-500/25"
                 >
                   {t}
                 </span>

@@ -10,7 +10,7 @@ export default function ExperienceTimeline() {
   const reduced = useReducedMotion();
 
   return (
-    <section id="experience" className="relative py-24 md:py-32 scroll-mt-20 section-contain">
+    <section id="experience" className="relative py-24 md:py-32 scroll-mt-20">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeader
           label="Experience"
@@ -41,13 +41,13 @@ export default function ExperienceTimeline() {
                   }`}
                 >
                   {/* Timeline node */}
-                  <div className="absolute left-0 md:left-1/2 top-8 h-3 w-3 -translate-x-1/2 rounded-full border-2 border-violet-400 bg-violet-400/30 z-10" />
+                  <div className="absolute left-0 md:left-1/2 top-8 h-3 w-3 -translate-x-1/2 rounded-full border-2 border-violet-400 bg-violet-400/40 z-10 timeline-node" />
 
                   {/* Content card */}
                   <div
                     className={`pl-8 md:pl-0 ${isLeft ? "md:pr-12 md:text-right" : "md:pl-12 md:[direction:ltr]"}`}
                   >
-                    <div className="group rounded-xl border border-white/10 bg-slate-950/60 p-6 transition-colors duration-300 hover:border-violet-500/25">
+                    <div className="group rounded-xl border border-white/10 bg-slate-950/60 p-6 transition-all duration-300 hover:border-violet-500/30 hover:shadow-lg hover:shadow-violet-500/5 hover:-translate-y-0.5">
                       <time className="font-mono text-xs text-cyan-400/80">{exp.period}</time>
                       <h3 className="mt-2 text-lg font-semibold text-white">{exp.role}</h3>
                       {exp.organizationUrl ? (

@@ -13,9 +13,10 @@ export const fadeIn = {
 };
 
 export const staggerContainer = {
-  hidden: {},
+  hidden: { opacity: 0 },
   visible: {
-    transition: { staggerChildren: 0.12, delayChildren: 0.15 },
+    opacity: 1,
+    transition: { staggerChildren: 0.12, delayChildren: 0.1 },
   },
 };
 

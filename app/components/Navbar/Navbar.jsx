@@ -34,7 +34,7 @@ export default function Navbar() {
           className="group flex items-center gap-2"
           onClick={() => setMobileOpen(false)}
         >
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-violet-500/30 bg-violet-500/10 font-mono text-xs font-bold text-violet-300 transition-colors group-hover:border-violet-400/50 group-hover:bg-violet-500/20">
+          <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-violet-500/30 bg-violet-500/10 font-mono text-base font-bold text-violet-300 transition-colors group-hover:border-violet-400/50 group-hover:bg-violet-500/20">
             DZ
           </span>
         </Link>

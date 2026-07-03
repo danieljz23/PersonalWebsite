@@ -5,14 +5,12 @@ import SectionHeader from "../ui/SectionHeader";
 import ProjectCard from "../ui/ProjectCard";
 import { projects } from "../../data/projects";
 import { staggerContainer } from "../../lib/motion";
-import { useReducedMotion } from "../../hooks/useReducedMotion";
 
 export default function ProjectShowcase() {
-  const reduced = useReducedMotion();
   const featured = projects.filter((p) => p.featured);
 
   return (
-    <section id="work" className="relative py-24 md:py-32 scroll-mt-20 section-contain">
+    <section id="work" className="relative py-24 md:py-32 scroll-mt-20">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeader
           label="Featured Work"
@@ -22,9 +20,9 @@ export default function ProjectShowcase() {
 
         <motion.div
           className="space-y-12 md:space-y-20"
-          initial={reduced ? false : "hidden"}
-          whileInView={reduced ? undefined : "visible"}
-          viewport={{ once: true, margin: "-60px" }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.05 }}
           variants={staggerContainer}
         >
           {featured.map((project, index) => (
