@@ -4,7 +4,7 @@ export const experiences = [
     role: "Lead Android Engineer",
     organization: "Leechy",
     organizationUrl: "https://www.leechy.app/",
-    period: "Jul 2025-Present",
+    period: "Jul 2025–Present",
     description:
       "Leading Android engineering for Leechy's production marketplace, owning the Kotlin/Jetpack Compose app from architecture through Google Play releases.",
     highlights: [
@@ -20,7 +20,7 @@ export const experiences = [
     role: "Undergraduate Researcher",
     organization: "Trustworthy AI Lab at UCLA",
     organizationUrl: "http://www.stat.ucla.edu/~guangcheng/",
-    period: "Jun 2026-Present",
+    period: "Jun 2026–Present",
     description:
       "Building AI-agent infrastructure across autonomous-game evaluation and multi-table reasoning systems.",
     highlights: [
@@ -33,9 +33,9 @@ export const experiences = [
   },
   {
     id: "rocket",
-    role: "Controls Lead / EGSE Lead",
+    role: "Controls Lead / Electrical Ground Support Equipment Lead",
     organization: "Rocket Project at UCLA",
-    period: "Sep 2023-Jun 2026",
+    period: "Sep 2023–Jun 2026",
     description:
       "Led controls and ground-support software for liquid rocket propulsion testing, spanning embedded systems, simulations, telemetry, and hotfire validation.",
     highlights: [
@@ -52,7 +52,7 @@ export const experiences = [
     id: "creative-labs",
     role: "Mobile Developer Lead",
     organization: "Creative Labs at UCLA",
-    period: "Sep 2024-Jun 2025",
+    period: "Sep 2024–Jun 2025",
     description:
       "Led mobile development for a gamified coding education app, coordinating implementation across product design, frontend features, and backend integration.",
     highlights: [

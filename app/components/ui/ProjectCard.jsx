@@ -11,6 +11,7 @@ const linkLabels = {
   competitionPlatform: "Competition Platform",
   tournamentSite: "Tournament Site",
   liveDemo: "Live Demo",
+  liveSite: "Live Site",
   website: "Website",
   github: "GitHub",
   lab: "Lab",
@@ -75,8 +76,7 @@ function ProjectImage({ project }) {
       muted
       loop
       playsInline
-      preload="metadata"
-      poster={src}
+      preload="auto"
       aria-label={`${title} preview video`}
       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
       onError={handleError}
@@ -169,7 +169,7 @@ export default function ProjectCard({ project, index = 0 }) {
             <div className="flex flex-wrap gap-3">
               {Object.entries(project.links ?? {}).map(([key, href]) => {
                 const label = linkLabels[key] ?? key;
-                const variant = key === "lab" ? "ghost" : "secondary";
+                const variant = key === "competitionPlatform" ? "primary" : key === "lab" ? "ghost" : "secondary";
 
                 return (
                   <MagneticButton

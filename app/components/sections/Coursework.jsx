@@ -6,7 +6,7 @@ export default function CourseworkSection() {
     <Section
       id="coursework"
       title="Coursework"
-      subtitle="Relevant UCLA CS coursework in AI, systems, and algorithms."
+      subtitle="Relevant UCLA technical coursework across software, systems, AI, and electrical engineering."
     >
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {coursework.map((course) => (

@@ -27,7 +27,7 @@ export default function ContactCTA() {
             <SectionHeader
               label="Contact"
               title="Let's Build Something"
-              subtitle="Open to internships and roles in AI systems, software engineering, Android, and embedded controls."
+              subtitle="Open to software engineering internships across backend, mobile, AI systems, and systems engineering."
               align="center"
             />
             <div className="flex flex-wrap justify-center gap-4">

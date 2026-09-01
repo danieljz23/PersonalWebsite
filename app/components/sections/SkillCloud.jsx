@@ -65,9 +65,12 @@ export default function SkillCloud() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <h3 className="mb-6 font-mono text-xs uppercase tracking-[0.2em] text-cyan-400/80">
+          <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-cyan-400/80">
             UCLA Coursework
           </h3>
+          <p className="mt-3 mb-6 max-w-2xl text-sm text-slate-400">
+            Relevant UCLA technical coursework across software, systems, AI, and electrical engineering.
+          </p>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {coursework.map((course, i) => (
               <motion.div

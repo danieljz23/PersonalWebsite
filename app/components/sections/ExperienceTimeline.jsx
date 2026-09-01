@@ -64,7 +64,7 @@ export default function ExperienceTimeline() {
                       )}
                       <p className="mt-3 text-sm text-slate-300">{exp.description}</p>
                       <ul className={`mt-3 space-y-1.5 ${isLeft ? "md:items-end" : ""}`}>
-                        {exp.highlights.slice(0, 2).map((h, i) => (
+                        {exp.highlights.slice(0, 3).map((h, i) => (
                           <li key={i} className="text-xs text-slate-400 leading-relaxed">
                             {h}
                           </li>

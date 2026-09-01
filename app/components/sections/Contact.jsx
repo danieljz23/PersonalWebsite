@@ -9,7 +9,7 @@ export default function Contact() {
     <Section
       id="contact"
       title="Contact"
-      subtitle="Open to internships and full-time roles in AI systems, software engineering, Android, and embedded/control systems."
+      subtitle="Open to software engineering internships across backend, mobile, AI systems, and systems engineering."
     >
       <div className="rounded-xl border border-white/10 bg-slate-900/40 p-8 md:p-12 backdrop-blur-sm">
         <p className="max-w-xl text-slate-400">
