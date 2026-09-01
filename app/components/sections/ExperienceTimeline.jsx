@@ -10,7 +10,7 @@ export default function ExperienceTimeline() {
   const reduced = useReducedMotion();
 
   return (
-    <section id="experience" className="relative py-24 md:py-32 scroll-mt-20">
+    <section id="experience" className="relative pt-24 pb-16 md:pt-32 md:pb-20 scroll-mt-20">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeader
           label="Experience"
@@ -23,7 +23,7 @@ export default function ExperienceTimeline() {
           <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px md:-translate-x-1/2 bg-gradient-to-b from-transparent via-violet-500/40 to-transparent" />
 
           <motion.div
-            className="space-y-12 md:space-y-0"
+            className="space-y-10 md:space-y-0"
             variants={staggerContainer}
             initial={reduced ? false : "hidden"}
             whileInView={reduced ? undefined : "visible"}
@@ -62,10 +62,10 @@ export default function ExperienceTimeline() {
                       ) : (
                         <p className="text-sm text-violet-400">{exp.organization}</p>
                       )}
-                      <p className="mt-3 text-sm text-slate-400">{exp.description}</p>
+                      <p className="mt-3 text-sm text-slate-300">{exp.description}</p>
                       <ul className={`mt-3 space-y-1.5 ${isLeft ? "md:items-end" : ""}`}>
                         {exp.highlights.slice(0, 2).map((h, i) => (
-                          <li key={i} className="text-xs text-slate-500 leading-relaxed">
+                          <li key={i} className="text-xs text-slate-400 leading-relaxed">
                             {h}
                           </li>
                         ))}

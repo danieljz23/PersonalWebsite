@@ -32,9 +32,9 @@ export default function ExperienceCard({ experience }) {
         <time className="text-sm text-slate-500 whitespace-nowrap">{period}</time>
       </div>
 
-      <p className="mt-3 text-sm text-slate-400">{description}</p>
+      <p className="mt-3 text-sm text-slate-300">{description}</p>
 
-      <ul className="mt-4 space-y-2 text-sm text-slate-400">
+      <ul className="mt-4 space-y-2 text-sm text-slate-300/90">
         {highlights.map((item, i) => (
           <li key={i} className="flex gap-2">
             <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-amber-500" aria-hidden="true" />

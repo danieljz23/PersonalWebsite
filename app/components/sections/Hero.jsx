@@ -7,12 +7,12 @@ import { siteConfig } from "../../data/site";
 import { fadeUp, staggerContainer } from "../../lib/motion";
 import { useReducedMotion } from "../../hooks/useReducedMotion";
 
-// Spread across gutter — two rows, wide horizontal gap, kept left of photo
-const floatingLabelConfig = [
-  { label: "Software", top: "6%", left: "-20%", duration: 8, delay: 0.6, drift: 4 },
-  { label: "Mobile", top: "14%", right: "-30%", duration: 7, delay: 0, drift: 5 },
-  { label: "Backend", top: "50%", left: "50%", duration: 9, delay: 2, drift: 4 },
-  { label: "AI Tooling", top: "30%", right: "29%", duration: 8, delay: 1.2, drift: 5 },
+// Spread across gutter - two rows, wide horizontal gap, kept left of photo
+const floatingLabelPositions = [
+  { top: "6%", left: "-20%", duration: 8, delay: 0.6, drift: 4 },
+  { top: "14%", right: "-30%", duration: 7, delay: 0, drift: 5 },
+  { top: "50%", left: "50%", duration: 9, delay: 2, drift: 4 },
+  { top: "30%", right: "29%", duration: 8, delay: 1.2, drift: 5 },
 ];
 
 function FloatingLabels({ labels, reduced }) {
@@ -54,8 +54,20 @@ function FloatingLabels({ labels, reduced }) {
 
 export default function Hero() {
   const reduced = useReducedMotion();
-  const { name, tagline, subheadline, resumePdf, email, headshot, education } =
-    siteConfig;
+  const {
+    name,
+    tagline,
+    subheadline,
+    resumePdf,
+    email,
+    headshot,
+    education,
+    floatingLabels,
+  } = siteConfig;
+  const labelConfig = floatingLabelPositions.map((position, index) => ({
+    ...position,
+    label: floatingLabels[index] ?? "",
+  }));
 
   return (
     <section
@@ -65,9 +77,8 @@ export default function Hero() {
     >
       <div className="mx-auto max-w-6xl px-6 w-full">
         <div className="relative grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
-          <FloatingLabels labels={floatingLabelConfig} reduced={reduced} />
+          <FloatingLabels labels={labelConfig} reduced={reduced} />
 
-          {/* Text column — always above floating labels */}
           <motion.div
             className="relative z-20"
             initial={reduced ? false : "hidden"}

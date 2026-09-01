@@ -7,14 +7,20 @@ import MagneticButton from "./MagneticButton";
 import { fadeUp } from "../../lib/motion";
 import { useReducedMotion } from "../../hooks/useReducedMotion";
 
+const linkLabels = {
+  competitionPlatform: "Competition Platform",
+  tournamentSite: "Tournament Site",
+  liveDemo: "Live Demo",
+  website: "Website",
+  github: "GitHub",
+  lab: "Lab",
+};
+
 function PhoneMockup({ src, alt, onError }) {
   return (
     <div className="relative mx-auto w-[168px] sm:w-[188px] md:w-[204px]">
-      {/* Device frame */}
       <div className="relative rounded-[2.25rem] border-[3px] border-slate-600/90 bg-slate-900 p-[7px] shadow-2xl shadow-black/50">
-        {/* Notch */}
         <div className="absolute top-[14px] left-1/2 z-10 h-[5px] w-14 -translate-x-1/2 rounded-full bg-slate-800" />
-        {/* Screen — tall aspect ratio so full screenshot fits */}
         <div className="relative aspect-[9/19.5] w-full overflow-hidden rounded-[1.65rem] bg-black">
           <Image
             src={src}
@@ -34,7 +40,7 @@ function PhoneMockup({ src, alt, onError }) {
 function ProjectImage({ project }) {
   const [src, setSrc] = useState(project.image);
   const [failed, setFailed] = useState(false);
-  const { mockup, title, fallbackImage } = project;
+  const { mockup, title, fallbackImage, video } = project;
 
   const handleError = () => {
     if (fallbackImage && src !== fallbackImage) {
@@ -52,6 +58,7 @@ function ProjectImage({ project }) {
         </div>
       );
     }
+
     return (
       <PhoneMockup
         src={src}
@@ -61,7 +68,20 @@ function ProjectImage({ project }) {
     );
   }
 
-  const imageContent = failed ? (
+  const mediaContent = video && !failed ? (
+    <video
+      src={video}
+      autoPlay
+      muted
+      loop
+      playsInline
+      preload="metadata"
+      poster={src}
+      aria-label={`${title} preview video`}
+      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+      onError={handleError}
+    />
+  ) : failed ? (
     <div className="flex h-full w-full items-center justify-center bg-slate-900/80">
       <p className="text-xs text-slate-500 font-mono px-4 text-center">
         Add image: public{project.image}
@@ -84,20 +104,20 @@ function ProjectImage({ project }) {
   if (mockup === "phone-wide") {
     return (
       <div className="relative h-[220px] md:h-[260px] w-full overflow-hidden rounded-xl border border-white/10 bg-black">
-        {imageContent}
+        {mediaContent}
       </div>
     );
   }
 
   return (
     <div className="relative h-[200px] md:h-[260px] w-full overflow-hidden rounded-xl border border-white/10">
-      {imageContent}
+      {mediaContent}
       <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
     </div>
   );
 }
 
-export default function ProjectCard({ project, index }) {
+export default function ProjectCard({ project, index = 0 }) {
   const reduced = useReducedMotion();
   const isEven = index % 2 === 0;
 
@@ -128,7 +148,7 @@ export default function ProjectCard({ project, index }) {
 
             <ul className="mt-4 space-y-2 mb-5">
               {project.impact.map((item, i) => (
-                <li key={i} className="flex gap-2 text-sm text-slate-400 leading-relaxed">
+                <li key={i} className="flex gap-2 text-sm text-slate-300/90 leading-relaxed">
                   <span className="mt-2 h-1 w-1 shrink-0 rounded-full" style={{ background: project.accent }} />
                   {item}
                 </li>
@@ -147,21 +167,23 @@ export default function ProjectCard({ project, index }) {
             </div>
 
             <div className="flex flex-wrap gap-3">
-              {project.links?.github && (
-                <MagneticButton href={project.links.github} variant="secondary" external className="text-xs px-4 py-2">
-                  GitHub
-                </MagneticButton>
-              )}
-              {project.links?.website && (
-                <MagneticButton href={project.links.website} variant="secondary" external className="text-xs px-4 py-2">
-                  Live
-                </MagneticButton>
-              )}
-              {project.links?.lab && (
-                <MagneticButton href={project.links.lab} variant="ghost" external className="text-xs px-4 py-2">
-                  Lab →
-                </MagneticButton>
-              )}
+              {Object.entries(project.links ?? {}).map(([key, href]) => {
+                const label = linkLabels[key] ?? key;
+                const variant = key === "lab" ? "ghost" : "secondary";
+
+                return (
+                  <MagneticButton
+                    key={key}
+                    href={href}
+                    variant={variant}
+                    external
+                    className="text-xs px-4 py-2"
+                    aria-label={`${project.title}: ${label}`}
+                  >
+                    {label}
+                  </MagneticButton>
+                );
+              })}
             </div>
           </div>
 
