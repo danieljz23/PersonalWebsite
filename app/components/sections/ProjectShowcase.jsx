@@ -15,7 +15,7 @@ export default function ProjectShowcase() {
         <SectionHeader
           label="Featured Work"
           title="Systems I've Built"
-          subtitle="AI agent integration, production Android, embedded controls, and full-stack platforms."
+          subtitle="Experience-backed engineering work and selected personal projects across mobile, AI tooling, full-stack apps, and controls."
         />
 
         <motion.div

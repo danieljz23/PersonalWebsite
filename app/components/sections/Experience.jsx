@@ -7,7 +7,7 @@ export default function Experience() {
     <Section
       id="experience"
       title="Experience"
-      subtitle="Research, production engineering, and hardware/software integration across AI, mobile, and embedded systems."
+      subtitle="Production software, research infrastructure, mobile development, and hardware-integrated systems."
     >
       <div className="space-y-6">
         {experiences.map((exp) => (

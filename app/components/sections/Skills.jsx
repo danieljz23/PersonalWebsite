@@ -7,7 +7,7 @@ export default function Skills() {
     <Section
       id="skills"
       title="Skills"
-      subtitle="Languages, frameworks, and domains I work across in AI, software, and embedded engineering."
+      subtitle="Languages, frameworks, and technologies I use across production software, research tools, and systems work."
     >
       <div className="grid gap-6 sm:grid-cols-2">
         {skillGroups.map((group) => (

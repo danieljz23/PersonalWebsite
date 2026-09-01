@@ -28,7 +28,7 @@ export default function SkillCloud() {
         <SectionHeader
           label="Skills"
           title="Technical Stack"
-          subtitle="Languages, AI/ML, frameworks, and embedded systems."
+          subtitle="Languages, frameworks, and technologies I use across production software, research tools, and systems work."
         />
 
         <motion.div

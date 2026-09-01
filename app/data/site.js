@@ -1,11 +1,11 @@
 export const siteConfig = {
   name: "Daniel Zhou",
-  title: "Daniel Zhou | AI Systems, Android & Embedded Software Engineer",
+  title: "Daniel Zhou | Software Engineer",
   description:
-    "Building agentic AI tooling, production Android systems, and embedded control software.",
-  tagline: "AI Systems, Android & Embedded Software Engineer",
+    "Software engineer building production mobile apps, AI evaluation platforms, full-stack systems, and embedded controls.",
+  tagline: "Software Engineer",
   subheadline:
-    "Building agentic AI tooling, production Android systems, and embedded control software.",
+    "UCLA Computer Science & Engineering student building reliable software across mobile, backend, AI tooling, and hardware-integrated systems.",
   email: "daniel.jieru.zhou@gmail.com",
   github: "https://github.com/danieljz23",
   linkedin: "https://www.linkedin.com/in/daniel-jieru-zhou/",
@@ -18,10 +18,10 @@ export const siteConfig = {
     gpa: "3.98",
   },
   floatingLabels: [
-    "AI Agents",
-    "Android Systems",
-    "Embedded Controls",
-    "AI Systems",
+    "Mobile",
+    "Backend",
+    "AI Tooling",
+    "Systems",
   ],
 };
 

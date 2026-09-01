@@ -15,7 +15,7 @@ export default function ExperienceTimeline() {
         <SectionHeader
           label="Experience"
           title="Engineering Timeline"
-          subtitle="Research integration, production Android, and embedded control systems."
+          subtitle="Production software, research infrastructure, mobile development, and hardware-integrated systems."
         />
 
         <div className="relative">

@@ -20,12 +20,12 @@ export const metadata = {
   description: siteConfig.description,
   keywords: [
     "Daniel Zhou",
-    "AI Systems",
-    "Machine Learning",
-    "Android Developer",
-    "Embedded Systems",
     "UCLA",
     "Software Engineer",
+    "Full-Stack Engineering",
+    "Mobile Engineering",
+    "AI Tooling",
+    "Embedded Controls",
   ],
   authors: [{ name: siteConfig.name }],
   openGraph: {
