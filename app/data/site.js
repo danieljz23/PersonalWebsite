@@ -2,10 +2,10 @@ export const siteConfig = {
   name: "Daniel Zhou",
   title: "Daniel Zhou | Software Engineer",
   description:
-    "Software engineer building production mobile apps, AI evaluation platforms, full-stack systems, and embedded controls.",
+    "Software engineer building production mobile apps, backend and AI infrastructure, cloud systems, and embedded controls.",
   tagline: "Software Engineer",
   subheadline:
-    "UCLA Computer Science & Engineering student building reliable software across mobile, backend, AI tooling, and hardware-integrated systems.",
+    "UCLA Computer Science & Engineering student building reliable software across mobile, AI infrastructure, cloud systems, and embedded controls.",
   email: "daniel.jieru.zhou@gmail.com",
   github: "https://github.com/danieljz23",
   linkedin: "https://www.linkedin.com/in/daniel-jieru-zhou/",
@@ -20,7 +20,7 @@ export const siteConfig = {
   floatingLabels: [
     "Mobile",
     "Backend",
-    "AI Tooling",
+    "AI Systems",
     "Systems",
   ],
 };

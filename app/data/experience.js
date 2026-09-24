@@ -22,14 +22,14 @@ export const experiences = [
     organizationUrl: "http://www.stat.ucla.edu/~guangcheng/",
     period: "Jun 2026–Present",
     description:
-      "Building AI-agent infrastructure across autonomous-game evaluation and multi-table reasoning systems.",
+      "Building production infrastructure for autonomous-agent competitions and multi-table AI reasoning systems.",
     highlights: [
-      "Architected MCP-based competition infrastructure with pluggable runtime adapters and a unified agent API.",
-      "Integrated Pokémon Showdown using FastAPI, poke-env, Docker, and WebSockets while preserving the agent-facing MCP interface.",
-      "Built Realy observability across LangGraph runtime streams, Supabase incident tracking, error classification, correlation IDs, and LangSmith trace links.",
-      "Re-architected multi-turn LangGraph state reconstruction from durable messages and table metadata without persistent checkpoints.",
+      "Built the contestant SDK/runtime for authentication, automatic match and tournament discovery, MCP gameplay, and concurrent autonomous-agent execution.",
+      "Designed cross-game MCP/runtime-adapter abstractions and validated the real contestant path across heterogeneous environments with ~205 automated tests and deployed end-to-end testing.",
+      "Deployed and debugged AWS infrastructure across ECS/Fargate, Docker, VPC networking, HTTPS, and private WebSocket services.",
+      "Built Realy observability and multi-turn state infrastructure across LangGraph, Supabase, and LangSmith.",
     ],
-    tags: ["Python", "FastAPI", "Docker", "LangGraph", "LangSmith"],
+    tags: ["Python", "MCP", "AWS", "Docker", "FastAPI", "LangGraph"],
   },
   {
     id: "rocket",

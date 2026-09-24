@@ -24,7 +24,7 @@ export const metadata = {
     "Software Engineer",
     "Full-Stack Engineering",
     "Mobile Engineering",
-    "AI Tooling",
+    "AI Infrastructure",
     "Embedded Controls",
   ],
   authors: [{ name: siteConfig.name }],

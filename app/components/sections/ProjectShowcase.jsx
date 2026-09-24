@@ -15,7 +15,7 @@ export default function ProjectShowcase() {
         <SectionHeader
           label="Featured Work"
           title="Systems I've Built"
-          subtitle="Experience-backed engineering work and selected personal projects across mobile, AI tooling, full-stack apps, and controls."
+          subtitle="Experience-backed engineering work and selected personal projects across mobile, AI infrastructure, full-stack applications, and controls."
         />
 
         <motion.div

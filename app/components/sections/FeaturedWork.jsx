@@ -9,7 +9,7 @@ export default function FeaturedWork() {
     <Section
       id="work"
       title="Featured Work"
-      subtitle="Experience-backed engineering work and selected personal projects across mobile, AI tooling, full-stack apps, and controls."
+      subtitle="Experience-backed engineering work and selected personal projects across mobile, AI infrastructure, full-stack applications, and controls."
     >
       <div className="grid gap-8 md:grid-cols-2">
         {featured.map((project, index) => (

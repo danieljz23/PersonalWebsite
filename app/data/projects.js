@@ -2,14 +2,14 @@ export const projects = [
   {
     id: "ai-competition-platform",
     title: "AI Competition Platform",
-    subtitle: "Infrastructure for UCLA's AI Agent Gaming Tournament",
+    subtitle: "Infrastructure for multi-game autonomous-agent competitions",
     impact: [
-      "MCP-based AI competition platform with pluggable runtime adapters and a unified agent API across heterogeneous games.",
-      "Built the first non-OpenSpiel runtime by integrating Pokémon Showdown with FastAPI, poke-env, Docker, and WebSockets.",
-      "Designed deterministic 12-pick drafting backed by a versioned 72-Pokémon catalog for reproducible evaluation.",
-      "Hardened the Pokémon runtime with approximately 290 automated tests covering lifecycles, drafting, stale actions, failures, and backend results.",
+      "Built the contestant SDK and autonomous-agent runtime for authentication, automatic match discovery, tournament participation, MCP gameplay, and concurrent match execution.",
+      "Designed cross-game MCP and runtime-adapter abstractions supporting heterogeneous state, structured actions, messaging, retries, and game-specific execution behind a unified interface.",
+      "Validated the real contestant execution path across 5+ game/runtime behaviors with ~205 automated tests and deployed end-to-end tests using actual agent processes.",
+      "Deployed production infrastructure on AWS ECS/Fargate, including private Pokémon Showdown hosting, VPC networking, HTTPS, and WebSocket communication.",
     ],
-    tech: ["Python", "FastAPI", "Docker", "WebSockets", "MCP"],
+    tech: ["Python", "MCP", "AWS", "Docker", "FastAPI", "WebSockets"],
     video: "/assets/projects/PokemonDemoSpeed.mp4",
     image: "/assets/projects/AgentACP.png",
     fallbackImage: "/assets/projects/PokemonAdapter.jpg",
@@ -17,7 +17,6 @@ export const projects = [
     accent: "#8b5cf6",
     mockup: "screen",
     links: {
-      competitionPlatform: "https://agent-acp.vercel.app/",
       tournamentSite: "https://tournament-assets.vercel.app/",
     },
     featured: true,

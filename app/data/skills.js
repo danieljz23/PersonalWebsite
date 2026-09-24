@@ -29,6 +29,7 @@ export const skillGroups = [
     skills: [
       "AWS",
       "Docker",
+      "MCP",
       "Supabase",
       "MongoDB",
       "Git",
